@@ -2,6 +2,9 @@
   "name": "australia-sin-filtros",
   "description": "Australia sin filtros Blog",
   "version": "1.0.0",
+  "engines": {
+    "node": "v11.8.0"
+  },
   "author": "Rodrigo Avila <rodrigo398@gmail.com>",
   "bugs": {
     "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
