@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
+import SEO from '../components/SEO'
 import ArticlePreview from '../components/article-preview'
 
 class RootIndex extends React.Component {
@@ -13,12 +14,16 @@ class RootIndex extends React.Component {
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
     return (
-      <Layout location={this.props.location} >
+      <Layout location={this.props.location}>
+        <SEO
+          title="Home"
+          keywords={[`Australia`, `Visa`, `Work and Holiday`]}
+        />
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
           <Hero data={author.node} />
           <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
+            <h2 className="section-headline">Articulos Recientes</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
                 return (
@@ -44,7 +49,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlogPost(
+      sort: { fields: [publishDate], order: DESC }
+      filter: { node_locale: { eq: "en-US" } }
+    ) {
       edges {
         node {
           title
@@ -53,7 +61,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-             ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           description {
@@ -64,7 +72,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulPerson(filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }) {
+    allContentfulPerson(
+      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
+    ) {
       edges {
         node {
           name
@@ -74,8 +84,8 @@ export const pageQuery = graphql`
           title
           heroImage: image {
             fluid(
-              maxWidth: 1180
-              maxHeight: 480
+              maxWidth: 1920
+              maxHeight: 1200
               resizingBehavior: PAD
               background: "rgb:000000"
             ) {

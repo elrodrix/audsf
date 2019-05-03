@@ -63,5 +63,8 @@ public
 # gatsby cache folder
 .cache
 
+#wallpaper
+wallpaper
+
 # contentful config file
 .contentful.json
