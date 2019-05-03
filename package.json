@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-contentful-starter",
-  "description": "Starter Contentful Gatsby Blog",
+  "name": "australia-sin-filtros",
+  "description": "Australia sin filtros Blog",
   "version": "1.0.0",
   "engines": {
     "node": "11.8.0"
   },
-  "author": "Stefan Judis <stefanjudis@gmail.com>",
+  "author": "Rodrigo Avila <rodrigo398@gmail.com>",
   "bugs": {
     "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
   },
