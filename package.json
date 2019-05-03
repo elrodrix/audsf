@@ -2,6 +2,9 @@
   "name": "gatsby-contentful-starter",
   "description": "Starter Contentful Gatsby Blog",
   "version": "1.0.0",
+  "engines": {
+    "node": "11.8.0"
+  },
   "author": "Stefan Judis <stefanjudis@gmail.com>",
   "bugs": {
     "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
